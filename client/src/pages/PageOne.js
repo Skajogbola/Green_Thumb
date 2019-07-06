@@ -7,18 +7,23 @@ function PageOne() {
     <Container fluid>
       <Row>
         <Col size="md-12">
-          <div className="card-body">
-            <img className="fit-picture"
-              src="../images/homepage.jpeg"
-              alt="Plants" />
-
-            <h5 className="card-title">Welcome to Green Thumb</h5>
-            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="/login" className="btn btn-primary">LOGIN</a>
-          </div>
-          <div className="card-footer text-muted">
-            2 days ago
+          <div class="card text-center">
+            <div class="card-header">
+              Featured
  </div>
+            <div className="card-body">
+              <img className="fit-picture"
+                src="../images/homepage.jpeg"
+                alt="Plants" />
+
+              <h5 className="card-title">Welcome to Green Thumb</h5>
+              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="/login" className="btn btn-primary">LOGIN</a>
+            </div>
+            <div className="card-footer text-muted">
+              2 days ago
+ </div>
+          </div>
 
         </Col>
       </Row>
