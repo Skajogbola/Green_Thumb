@@ -1,17 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
+import PageOne from "./pages/PageOne";
+// import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        {/* <Nav /> */}
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={PageOne} />
+          {/* <Route exact path="/" component={Home} /> */}
           <Route exact path="/saved" component={Saved} />
           <Route component={NoMatch} />
         </Switch>
