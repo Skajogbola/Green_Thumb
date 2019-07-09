@@ -48,13 +48,14 @@ class Login extends Component {
                   value={this.state.password}
                   onChange={this.handleInputChange}
                   name="password"
+                  type="password"
                   placeholder="Password (required)"
                 />
                 <FormBtn
                   disabled={!(this.state.author && this.state.title)}
                   onClick={this.handleFormSubmit}
                 >
-                  Sign in
+                  Sign In
               </FormBtn>
               </form>
             </Jumbotron>
