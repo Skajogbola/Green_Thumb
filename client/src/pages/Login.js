@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
@@ -69,7 +68,7 @@ class Login extends Component {
               </br>
               <br></br>
               <br></br>
-              <a href="/login" className="btn btn-success">CREATE ACCOUNT</a>
+              <a href="/signin" className="btn btn-success">CREATE ACCOUNT</a>
             </Jumbotron>
           </Col>
         </Row>
