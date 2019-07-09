@@ -1,29 +1,81 @@
-import React from "react";
+import React, { Component } from "react";
+// import DeleteBtn from "../components/DeleteBtn";
+import Jumbotron from "../components/Jumbotron";
+import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
+import { Input, FormBtn } from "../components/Form";
 
+class Login extends Component {
+  state = {
+    books: [],
+    email: "",
+    password: ""
+  };
 
-function Login() {
-  return (
-    <Container fluid>
-      <Row>
-        <Col size="md-12">
-            <div className="card text-center">
-              <div className="card-header">
-                LOGIN
- </div>
-              <div className="card-body">
-                <h5 className="card-title">Welcome to Green Thumb</h5>
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="google.com" className="btn btn-primary">LOGIN</a>
-              </div>
-              <div className="card-footer text-muted">
-                2 days ago
- </div>
-            </div>
-        </Col>
-      </Row>
-    </Container>
-  );
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.author) {
+      API.saveBook({
+        email: this.state.email,
+        password: this.state.password
+      })
+        .then(res => this.loadBooks())
+        .catch(err => console.log(err));
+    }
+  };
+
+  render() {
+    return (
+      <Container fluid>
+        <Row>
+          <Col size="md-6">
+            <Jumbotron>
+              <h1>Sign in!</h1>
+              <form>
+                <Input
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                  name="email"
+                  placeholder="Email Address (required)"
+                />
+                <Input
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                  name="password"
+                  placeholder="Password (required)"
+                />
+                <FormBtn
+                  disabled={!(this.state.author && this.state.title)}
+                  onClick={this.handleFormSubmit}
+                >
+                  Sign in
+              </FormBtn>
+              </form>
+            </Jumbotron>
+            </Col>
+
+          <Col size="md-6 sm-12">
+            <Jumbotron>
+              <h1>No account yet?</h1>
+              <br></br>
+              <br>
+              </br>
+              <br></br>
+              <br></br>
+              <a href="/login" className="btn btn-success">CREATE ACCOUNT</a>
+            </Jumbotron>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 }
 
 export default Login;
