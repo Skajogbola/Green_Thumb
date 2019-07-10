@@ -1,5 +1,6 @@
+require("dotenv").config();
+
 const express = require("express");
-const exphbs = require("express-handlebars");
 // const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -13,15 +14,6 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
 
 const syncOptions = { force: false };
 
