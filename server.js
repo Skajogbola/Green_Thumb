@@ -5,7 +5,7 @@ const express = require("express");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const db = require("./models");
+const db = require("./models"); 
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
@@ -41,3 +41,5 @@ app.listen(PORT, () =>
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
 );
 });
+
+// module.exports = app;
