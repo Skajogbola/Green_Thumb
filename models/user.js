@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                
+                len: [1]
             }
         },
         lastName: {
@@ -23,8 +23,10 @@ module.exports = function (sequelize, DataTypes) {
           // The password cannot be null
           password: {
             type: DataTypes.STRING,
-            allowNull: false
-            
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
           }
         });
         User.prototype.validPassword = function(password) {
@@ -35,8 +37,6 @@ module.exports = function (sequelize, DataTypes) {
           User.hook("beforeCreate", function(user) {
             user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
           });
-        
-
 
     return User;
     }
