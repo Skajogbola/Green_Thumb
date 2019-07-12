@@ -17,5 +17,9 @@ export default {
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
   },
-  
+
+  //Go to the login page
+  login: function(data) {
+    return axios.post("/api/books", data);
+  }
 };
