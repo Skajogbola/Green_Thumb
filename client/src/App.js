@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PageOne from "./pages/PageOne";
 import Login from "./pages/Login";
 import Signin from "./pages/Signin";
+import Browse from "./pages/Browse";
 // import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
