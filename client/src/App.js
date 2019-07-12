@@ -17,6 +17,7 @@ function App() {
           <Route exact path="/" component={PageOne} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signin" component={Signin} />
+          <Route exact path="/browse" component={Browse} />
           {/* <Route exact path="/" component={Home} /> */}
           <Route exact path="/saved" component={Saved} />
           <Route component={NoMatch} />
