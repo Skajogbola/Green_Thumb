@@ -26,26 +26,16 @@ class Signin extends Component {
   }
 
   saveInfo = () => {
-    const form = true;
-    if (form === true) {
-      const userInput = {
-        firstname: this.state.firstname,
-        lastname: this.state.lastname,
-        email: this.state.email,
-        password: this.state.password,
-      };
-      console.log(userInput);
-    }
-      // if (this.state.firstname && this.state.lastname && this.state.email && this.state.password) {
-      //   API.saveBook({
-      //     firstname: this.state.firstname,
-      //     lastname: this.state.lastname,
-      //     email: this.state.email,
-      //     password: this.state.password,
-      //   })
-      //     .then(res => this.loadBooks())
-      //     .catch(err => console.log(err));
-      // }
+      if (this.state.firstname && this.state.lastname && this.state.email && this.state.password) {
+        API.loginInfo({
+          firstname: this.state.firstname,
+          lastname: this.state.lastname,
+          email: this.state.email,
+          password: this.state.password,
+        })
+          .then(res => this.loadBooks())
+          .catch(err => console.log(err));
+      }
     };
 
     render() {
