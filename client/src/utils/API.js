@@ -1,9 +1,10 @@
 import axios from "axios";
+const apiUrl = "http://localhost:3001/api"
 
 export default {
   // Gets books from the Google API
   getUser: function(q) {
-    return axios.get("/api/user/"+id);
+    return axios.post(`${apiUrl}/login`, q );
   },
   // Gets all saved books
   getSavedBooks: function() {
