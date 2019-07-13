@@ -16,7 +16,7 @@ class Browse extends Component {
             [name]: value
         });
     }
-};
+
 
 getPlants = () => {
     API.getPlants(this.state.q)
