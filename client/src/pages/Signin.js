@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import{ Redirect } from "react-router";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
@@ -10,7 +11,8 @@ class Signin extends Component {
     firstname: "",
     lastname: "",
     email: "",
-    password: ""
+    password: "",
+    navigate:false
   };
 
   handleInputChange = event => {
@@ -39,6 +41,10 @@ class Signin extends Component {
     };
 
     render() {
+      const{ navigate } = this.state
+      if(navigate){
+        return <Redirect to = "/login" push={true} />
+      }
       return (
         <Container fluid>
           <Row>
@@ -73,8 +79,9 @@ class Signin extends Component {
                   placeholder="Password (required)"
                 />
                 <FormBtn
-                  // disabled={!(this.state.author && this.state.title)}
-                  onClick={this.handleFormSubmit}
+                onClick={(e) => {
+                  this.setState({ navigate: true}); this.handleFormSubmit(e);}}
+                  // onClick={this.handleFormSubmit}
                 >
                   Sign In
               </FormBtn>
