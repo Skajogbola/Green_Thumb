@@ -20,11 +20,11 @@ class Login extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.email && this.state.password) {
-      API.saveBook({
+      API.getUser({
         email: this.state.email,
         password: this.state.password
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadBrows())
         .catch(err => console.log(err));
     }
   };
