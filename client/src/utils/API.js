@@ -19,7 +19,7 @@ export default {
   },
 
   //Go to the login page
-  login: function(data) {
-    return axios.post("/api/books", data);
+  loginInfo: function(data) {
+    return axios.post("http://localhost:3001/api/signin", data);
   }
 };
