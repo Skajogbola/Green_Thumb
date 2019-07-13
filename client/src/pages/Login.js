@@ -3,6 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
+import {withRouter} from 'react-router-dom'
 
 class Login extends Component {
   state = {
@@ -24,7 +25,13 @@ class Login extends Component {
         email: this.state.email,
         password: this.state.password
       })
-        .then(res => this.loadBrows())
+        .then(res => {
+          console.log(res.data)
+          if(res.data.success) {
+            this.props.history.push('/browse')
+
+          }
+        })
         .catch(err => console.log(err));
     }
   };
@@ -51,7 +58,7 @@ class Login extends Component {
                   placeholder="Password (required)"
                 />
                 <FormBtn
-                  disabled={!(this.state.author && this.state.title)}
+                  disabled={!(this.state.email && this.state.password)}
                   onClick={this.handleFormSubmit}
                 >
                   Sign In
@@ -77,4 +84,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
