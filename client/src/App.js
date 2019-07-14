@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PageOne from "./pages/PageOne";
 import Login from "./pages/Login";
 import Signin from "./pages/Signin";
-// import Browse from "./pages/Browse";
+import Browse from "./pages/Browse";
 // import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
@@ -12,13 +12,14 @@ import NoMatch from "./pages/NoMatch";
 function App() {
   return (
     <Router>
-      <div>
+      <div style={{ position: "relative" }}>
+
         {/* <Nav /> */}
         <Switch>
           <Route exact path="/" component={PageOne} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signin" component={Signin} />
-          {/* <Route exact path="/browse" component={Browse} /> */}
+          <Route exact path="/browse" component={Browse} />
           {/* <Route exact path="/" component={Home} /> */}
           <Route exact path="/saved" component={Saved} />
           <Route component={NoMatch} />
