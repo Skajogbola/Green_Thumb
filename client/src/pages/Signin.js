@@ -43,7 +43,7 @@ class Signin extends Component {
     render() {
       const{ navigate } = this.state
       if(navigate){
-        return <Redirect to = "/login" push={true} />
+        return <Redirect to = "/browse" push={true} />
       }
       return (
         <Container fluid>
