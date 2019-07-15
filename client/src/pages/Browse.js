@@ -4,6 +4,7 @@ import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
+import browsebackgrd from "../images2/browsebackground.jpeg";
 
 class Browse extends Component {
 
@@ -85,7 +86,8 @@ class Browse extends Component {
     }
     render() {
         return (
-            <div style={{ position: "relative", backgroundColor: "white" }}>
+
+            <div style={{ position: "relative", backgroundImage: `url(${browsebackgrd})` }}>
                 {
                     this.state.openModal &&
                     <Modal
@@ -100,11 +102,11 @@ class Browse extends Component {
                     />
                 }
 
-                <Container>
+                <Container >
                     <Row>
                         <Col size="md-12">
                             <Jumbotron>
-                                <h1 className="text-center">
+                                <h1 className="text-center" style={{}}>
                                     <strong>Plant Search</strong>
                                 </h1>
                                 <h2 className="text-center">Search for and Save Plants of Interest.</h2>
