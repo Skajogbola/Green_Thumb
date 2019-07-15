@@ -28,7 +28,7 @@ class Login extends Component {
         .then(res => {
           console.log(res.data)
           if(res.data.success) {
-            this.props.history.push('/browse')
+            this.props.history.push('/Browse')
 
           }
         })
