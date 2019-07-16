@@ -29,13 +29,13 @@ module.exports = function (sequelize, DataTypes) {
         },
     });
 
-    Plant.associate = function(models) {
+    Plant.associate = function (models) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
         Plant.hasMany(models.UserPlant, {
-          onDelete: "cascade"
+            onDelete: "cascade"
         });
-      };
+    };
 
     return Plant;
 };

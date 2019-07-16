@@ -3,32 +3,33 @@ var passport = require('../../config/passport');
 const router = require("express").Router();
 
 router.route("/")
-    .post(function (req, res) {
-        console.log(req.body)
-        db.User.findOne({ where: {email: req.body.email} }).then((user) =>{
-          if(user.validPassword(req.body.password)){
-            res.json({ success: true, userInfo: user})
-          } else {
-            res.json({success: false, msg: 'Invalid username or password'})
-          }
-    
-        }).catch((err) => {
-          res.json(err)
-        })
-        // db.User.create({
-        //     firstName: req.body.firstname,
-        //     lastName: req.body.lastname,
-        //     email: req.body.email,
-        //     password: req.body.password
-        // }).then(function () {
-        //     res.redirect(307, "/login");
-        // }).catch(function (err) {
-        //     console.log(err);
-        //     res.json(err);
-        //     // res.status(422).json(err.errors[0].message);
-        // });
+  .post(function (req, res) {
+    console.log(req.body)
+    db.User.findOne({ where: { email: req.body.email } }).then((user) => {
+      if (user.validPassword(req.body.password)) {
+
+        res.json({ success: true, userInfo: user })
+      } else {
+        res.json({ success: false, msg: 'Invalid username or password' })
+      }
+
+    }).catch((err) => {
+      res.json(err)
     })
-  
+    // db.User.create({
+    //     firstName: req.body.firstname,
+    //     lastName: req.body.lastname,
+    //     email: req.body.email,
+    //     password: req.body.password
+    // }).then(function () {
+    //     res.redirect(307, "/login");
+    // }).catch(function (err) {
+    //     console.log(err);
+    //     res.json(err);
+    //     // res.status(422).json(err.errors[0].message);
+    // });
+  })
+
 
 module.exports = router;
 
@@ -74,7 +75,7 @@ module.exports = router;
 //       res.json({});
 //     }
 //     else {
-        
+
 //       // Otherwise send back the user's email and id
 //       // Sending back a password, even a hashed password, isn't a good idea
 //       res.json({

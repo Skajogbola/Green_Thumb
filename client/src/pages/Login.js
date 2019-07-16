@@ -3,7 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Login extends Component {
   state = {
@@ -27,7 +27,8 @@ class Login extends Component {
       })
         .then(res => {
           console.log(res.data)
-          if(res.data.success) {
+          if (res.data.success) {
+            localStorage.setItem("userinfo", JSON.stringify(res.data.userInfo));
             this.props.history.push('/Browse')
 
           }
@@ -65,7 +66,7 @@ class Login extends Component {
               </FormBtn>
               </form>
             </Jumbotron>
-            </Col>
+          </Col>
 
           <Col size="md-6 sm-12">
             <Jumbotron>

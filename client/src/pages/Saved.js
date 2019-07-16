@@ -9,26 +9,43 @@ import { List } from "../components/List";
 
 class Saved extends Component {
   state = {
-    books: []
+    savedPlants: [],
+    userInfo: {}
   };
 
   componentDidMount() {
-    this.getSavedBooks();
+    console.log("hi")
+    API.getSavedPlants().then(results => {
+      console.log("Saved Plants", results)
+
+      this.setState({
+        savedPlants: results.data.plants,
+      })
+    }).catch(error => {
+      console.log(error);
+    })
+
+    //get the value for the userinfo and set it as a variable if not null update the value from the string to an object
+    var userInfo = localStorage.getItem("userinfo")
+    if (userInfo) {
+      userInfo = JSON.parse(userInfo);
+      this.setState({ userInfo }, () => {
+        API.getSavedPlants({ userId: this.state.userInfo.id }).then(results => {
+          console.log(results)
+          this.setState({
+            savedPlants: results.data.plants,
+          })
+        }).catch(error => {
+          console.log(error);
+        })
+      })
+    }
+
   }
 
-  getSavedBooks = () => {
-    API.getSavedBooks()
-      .then(res =>
-        this.setState({
-          books: res.data
-        })
-      )
-      .catch(err => console.log(err));
-  };
 
-  handleBookDelete = id => {
-    API.deleteBook(id).then(res => this.getSavedBooks());
-  };
+
+
 
   render() {
     return (
@@ -45,7 +62,7 @@ class Saved extends Component {
         </Row>
         <Row>
           <Col size="md-12">
-            <Card title="Saved Books" icon="download">
+            {/* <Card title="Saved Books" icon="download">
               {this.state.books.length ? (
                 <List>
                   {this.state.books.map(book => (
@@ -69,9 +86,9 @@ class Saved extends Component {
                   ))}
                 </List>
               ) : (
-                <h2 className="text-center">No Saved Books</h2>
-              )}
-            </Card>
+                  <h2 className="text-center">No Saved Books</h2>
+                )} */}
+            {/* </Card> */}
           </Col>
         </Row>
         <Footer />
