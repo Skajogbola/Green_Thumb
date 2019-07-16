@@ -5,6 +5,8 @@ import { Col, Row, Container } from "../components/Grid";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
 import browsebackgrd from "../images2/browsebackground.jpeg";
+import Nav from "../components/Nav";
+
 
 class Browse extends Component {
 
@@ -72,6 +74,19 @@ class Browse extends Component {
         this.setState({ openModal: false })
     }
 
+
+    savePlant = () => {
+        var plantId = this.state.selectedPlant.id;
+        var userId = this.state.userInfo.id;
+        console.log(this.state.userInfo, this.state.selectedPlant);
+        API.savePlants({ plantId, userId }).then(results => {
+            console.log(results)
+            this.cancelModal()
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
     componentDidMount() {
         API.getPlants().then(results => {
             console.log(results)
@@ -83,11 +98,19 @@ class Browse extends Component {
             console.log(error);
         })
 
+        //get the value for the userinfo and set it as a variable if not null update the value from the string to an object
+        var userInfo = localStorage.getItem("userinfo")
+        if (userInfo) {
+            userInfo = JSON.parse(userInfo);
+            this.setState({ userInfo })
+        }
+
     }
     render() {
         return (
 
             <div style={{ position: "relative", backgroundImage: `url(${browsebackgrd})` }}>
+                <Nav></Nav>
                 {
                     this.state.openModal &&
                     <Modal

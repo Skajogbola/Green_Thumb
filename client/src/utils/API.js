@@ -26,4 +26,11 @@ export default {
   getPlants: function () {
     return axios.get(`${apiUrl}/getPlants`);
   },
+  getSavedPlants: function (q) {
+    return axios.post(`${apiUrl}/getSavedPlants`, q);
+  },
+
+  savePlants: function (q) {
+    return axios.post(`${apiUrl}/savedPlants`, q);
+  },
 };
