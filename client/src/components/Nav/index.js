@@ -37,10 +37,10 @@ class Nav extends Component {
     return (
 
       <div className="sticky-top">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
+        <nav className="navbar navbar-expand-lg navbar-light bg-transparent mb-2">
 
-          <Link className="navbar-brand link" to="/">
-            Green Thumb
+          <Link className="navbar-brand link" to="/" style={{ color: "white" }}>
+            HOME
         </Link>
 
           <button
@@ -70,7 +70,7 @@ class Nav extends Component {
                   onClick={this.toggleNav}
                   className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
                   to="/saved"
-                >
+                  style={{ color: "white" }}>
                   Saved Plants
               </Link>
               </li>
