@@ -2,6 +2,7 @@ var db = require("../../models");
 const router = require("express").Router();
 
 router.route("/")
+// router.route("/signin")
     .post(function (req, res) {
         console.log(req.body);
         db.User.create({
@@ -9,8 +10,8 @@ router.route("/")
             lastName: req.body.lastname,
             email: req.body.email,
             password: req.body.password
-        }).then(function () {
-            res.redirect(307, "/login");
+        }).then(function (results) {
+            res.json(results);
         }).catch(function (err) {
             console.log(err);
             res.json(err);

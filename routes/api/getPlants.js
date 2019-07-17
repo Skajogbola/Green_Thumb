@@ -2,7 +2,9 @@ var db = require("../../models");
 
 const router = require("express").Router();
 
+// route hit: /api/getplants
 router.route("/")
+// router.route("/getPlants")
     .get(function (req, res) {
         console.log("hello from plants")
         db.Plant.findAll({}).then((plants) => {

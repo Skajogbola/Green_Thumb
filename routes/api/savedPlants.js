@@ -1,8 +1,8 @@
 var db = require("../../models");
-
 const router = require("express").Router();
 
 router.route("/")
+// router.route("/savedPlants")
     .post(function (req, res) {
         console.log("hello from plants", req.body)
         db.UserPlant.create({
