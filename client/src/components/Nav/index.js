@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
+
 class Nav extends Component {
   state = {
     open: false,
@@ -30,26 +31,32 @@ class Nav extends Component {
     window.removeEventListener("resize", this.updateWidth);
   }
 
+
+
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
-        <Link className="navbar-brand" to="/">
-          Google Books
+
+      <div className="sticky-top">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
+
+          <Link className="navbar-brand link" to="/">
+            Green Thumb
         </Link>
-        <button
-          onClick={this.toggleNav}
-          className="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
+
+          <button
+            onClick={this.toggleNav}
+            className="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
+            <ul className="navbar-nav">
+              {/* <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
                 className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
@@ -57,19 +64,21 @@ class Nav extends Component {
               >
                 Search
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                onClick={this.toggleNav}
-                className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
-                to="/saved"
-              >
-                Saved
+            </li> */}
+              <li className="nav-item">
+                <Link
+                  onClick={this.toggleNav}
+                  className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                  to="/saved"
+                >
+                  Saved Plants
               </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
     );
   }
 }

@@ -5,6 +5,7 @@ import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
 
+
 class Signin extends Component {
   state = {
     info: [],
@@ -36,8 +37,8 @@ class Signin extends Component {
         password: this.state.password,
       })
         .then(res => {
-          console.log(res);
-          localStorage.setItem("userinfo", JSON.stringify(res.userInfo));
+          // console.log(res);
+          localStorage.setItem("userinfo", JSON.stringify(res.userInfo)); 
         })
         .catch(err => console.log(err));
     }
@@ -57,31 +58,32 @@ class Signin extends Component {
             </Jumbotron>
             <form>
               <Input
-                value={this.state.title}
+                value={this.state.firstname}
                 onChange={this.handleInputChange}
                 name="firstname"
                 placeholder="First Name (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.lastname}
                 onChange={this.handleInputChange}
                 name="lastname"
                 placeholder="Last Name (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.email}
                 onChange={this.handleInputChange}
                 name="email"
                 placeholder="Email Address (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.password}
                 onChange={this.handleInputChange}
                 name="password"
                 type="password"
                 placeholder="Password (required)"
               />
               <FormBtn
+              disabled={!(this.state.firstname && this.state.lastname && this.state.email && this.state.password)}
                 onClick={(e) => {
                   this.setState({ navigate: true }); this.handleFormSubmit(e);
                 }}

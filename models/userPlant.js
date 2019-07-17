@@ -15,7 +15,13 @@ module.exports = function (sequelize, DataTypes) {
     }
     );
 
+    UserPlant.associate = function (models) {
 
+        UserPlant.belongsTo(models.User, {
+        
+        });
+      };
+    
 
     return UserPlant;
 };
