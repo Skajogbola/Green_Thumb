@@ -1,12 +1,12 @@
 import React from "react";
-import { Col, Row, Container } from "../components/Grid";
-
+import { Col, Container } from "../components/Grid";
 
 function PageOne() {
   return (
 
     <Container fluid>
-      <Row>
+
+      <div>
         <Col size="md-12" >
           <div className="card text-center">
             {/* <div className="card-header" >
@@ -25,11 +25,12 @@ function PageOne() {
                 height: "150px",
                 position: "absolute",
                 top: "350px",
-                zindex: 9
+                zindex: 9,
+
               }}>
                 <h5 className="card-title" >Welcome to Green Thumb</h5>
                 <p className="card-text" >Your one stop source for all things indoor plants.</p>
-                <a href="/login" className="btn btn-primary">LOGIN</a>
+                <a href="/login" className="btn btn-primary">START</a>
               </div>
             </div>
             {/* <div className="card-footer text-muted">
@@ -38,7 +39,8 @@ function PageOne() {
           </div>
 
         </Col>
-      </Row>
+      </div>
+
 
     </Container>
   );
