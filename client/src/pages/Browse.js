@@ -79,7 +79,7 @@ class Browse extends Component {
     savePlant = () => {
         var plantId = this.state.selectedPlant.id;
         var userId = this.state.userInfo.id;
-        console.log(this.state.userInfo, this.state.selectedPlant);
+        // console.log(this.state.userInfo, this.state.selectedPlant);
         API.savePlants({ plantId, userId }).then(results => {
             console.log(results)
             this.cancelModal()
