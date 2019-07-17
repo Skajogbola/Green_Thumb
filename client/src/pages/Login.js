@@ -29,7 +29,7 @@ class Login extends Component {
         password: this.state.password
       })
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           if (res.data.success) {
             localStorage.setItem("userinfo", JSON.stringify(res.data.userInfo));
             this.props.history.push('/Browse')

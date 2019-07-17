@@ -28,7 +28,10 @@ module.exports = function (sequelize, DataTypes) {
         len: [6]
       }
     }
-  });
+  },{
+    timestamps: false
+}
+  );
   User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
@@ -42,7 +45,8 @@ module.exports = function (sequelize, DataTypes) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
     User.hasMany(models.UserPlant, {
-      onDelete: "cascade"
+      foreignKey:"UserPlantId"
+      // onDelete: "cascade"
     });
   };
 
