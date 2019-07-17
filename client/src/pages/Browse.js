@@ -4,8 +4,9 @@ import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
-import browsebackgrd from "../images2/browsebackground.jpeg";
+import browsebackgrd from "../images2/browsebkgrd.jpeg";
 import Nav from "../components/Nav";
+// import "./"
 
 
 class Browse extends Component {
@@ -106,6 +107,8 @@ class Browse extends Component {
         }
 
     }
+
+
     render() {
         return (
 
@@ -127,9 +130,12 @@ class Browse extends Component {
 
                 <Container >
                     <Row>
-                        <Col size="md-12">
-                            <Jumbotron>
-                                <h1 className="text-center" style={{}}>
+                        <Col size="md-12" >
+                            <Jumbotron style={{
+                                opacity: 8,
+
+                            }} >
+                                <h1 className="text-center">
                                     <strong>Plant Search</strong>
                                 </h1>
                                 <h2 className="text-center">Search for and Save Plants of Interest.</h2>
@@ -138,8 +144,8 @@ class Browse extends Component {
                         </Col>
 
                     </Row>
-                    <Col size="md-12">
-                        <input
+                    <Col size="md-12" >
+                        <input style={{ color: "white" }}
                             className="form-control"
                             type="text"
                             value={this.state.searchTerm}
@@ -153,8 +159,9 @@ class Browse extends Component {
                             this.state.plants.length > 0 &&
                             this.state.plants.map(e =>
                                 <Col key={e.id} size="md-4">
-                                    <Card showDetails={() => this.showDetails(e)} title={e.name}>
-                                        <img className="img-fluid"
+                                    <Card
+                                        showDetails={() => this.showDetails(e)} title={e.name}>
+                                        <img className="img-fluid" style={{ maxHeight: "300px", maxWidth: "300px" }}
                                             src={e.picture}
                                             alt={e.name} />
                                     </Card>

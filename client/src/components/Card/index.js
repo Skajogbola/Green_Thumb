@@ -1,6 +1,7 @@
 import React from "react";
+import "./style.css";
 
-function Card({ title, children, showDetails }) {
+function Card({ title, children, showDetails, fixedHeightWidth }) {
   return (
     <div className="card mt-4" onClick={showDetails}>
       <div className="card-header">
@@ -14,5 +15,7 @@ function Card({ title, children, showDetails }) {
     </div>
   );
 }
+
+// {`card mt-4${fixedHeightWidth ? " fixedCardSize" : ""}`} onClick={showDetails}>
 
 export default Card;
