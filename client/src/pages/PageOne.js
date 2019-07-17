@@ -4,13 +4,14 @@ import { Col, Row, Container } from "../components/Grid";
 
 function PageOne() {
   return (
-    <Container fluid >
+
+    <Container fluid>
       <Row>
         <Col size="md-12" >
           <div className="card text-center">
             {/* <div className="card-header" >
               Featured
- </div> */}
+              </div> */}
             <div className="card-body" >
               <img className="fit-picture"
                 src="../images/homepage.jpeg"
@@ -33,11 +34,12 @@ function PageOne() {
             </div>
             {/* <div className="card-footer text-muted">
               2 days ago
- </div> */}
+              </div> */}
           </div>
 
         </Col>
       </Row>
+
     </Container>
   );
 }
