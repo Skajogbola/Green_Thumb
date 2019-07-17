@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 // import Card from "../components/Card";
 // import Book from "../components/Book";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 
-import Nav from "../components/Nav";
+// import Nav from "../components/Nav";
 
 
 // import { List } from "../components/List";
@@ -54,14 +54,14 @@ class Saved extends Component {
   render() {
     return (
       <Container>
-        <Nav></Nav>
+        {/* <Nav></Nav> */}
         <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1 className="text-center">
-                <strong>(React) Google Books Search</strong>
+                <strong>G R E E N    T H U M B</strong>
               </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
+              <h2 className="text-center">Saved Plants of Interest.</h2>
             </Jumbotron>
           </Col>
         </Row>
@@ -96,7 +96,7 @@ class Saved extends Component {
             {/* </Card> */}
           </Col>
         </Row>
-        <Footer />
+        {/* <Footer /> */}
       </Container>
     );
   }
