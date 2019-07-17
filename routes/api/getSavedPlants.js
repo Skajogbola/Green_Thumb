@@ -3,6 +3,7 @@ var db = require("../../models");
 const router = require("express").Router();
 
 router.route("/")
+// router.route("/getSavedPlants")
     .post(function (req, res) {
         console.log("hello from plants", req.body)
 
