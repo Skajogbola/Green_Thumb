@@ -13,7 +13,8 @@ import { Col, Row, Container } from "../components/Grid";
 class Saved extends Component {
   state = {
     savedPlants: [],
-    userInfo: {}
+    userInfo: {},
+    userName: ""
   };
 
   componentDidMount() {
@@ -30,9 +31,10 @@ class Saved extends Component {
 
     //get the value for the userinfo and set it as a variable if not null update the value from the string to an object
     var userInfo = localStorage.getItem("userinfo")
+    console.log(userInfo)
     if (userInfo) {
       userInfo = JSON.parse(userInfo);
-      this.setState({ userInfo }, () => {
+      this.setState({ userInfo, userName: userInfo.firstName }, () => {
         API.getSavedPlants({ userId: this.state.userInfo.id }).then(results => {
           console.log(results)
           this.setState({
@@ -55,7 +57,7 @@ class Saved extends Component {
               <h1 className="text-center">
                 <strong>G R E E N    T H U M B</strong>
               </h1>
-              <h2 className="text-center">Welcome to your saved Plants</h2>
+              <h2 className="text-center">Welcome to your saved plants {this.state.userName}</h2>
             </Jumbotron>
           </Col>
         </Row>
@@ -81,15 +83,15 @@ class Saved extends Component {
                   {/* </div> */}
                   {/* )
               } */}
-              </Card>
+                </Card>
                 {/* </Card> */}
               </Col>
             )
           }
         </Row>
       </Container>
-        );
-      }
-    }
-    
-    export default Saved;
+    );
+  }
+}
+
+export default Saved;

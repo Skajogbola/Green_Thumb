@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const db = require("./models");
 var cors = require('cors')
-const mailer = require("./nodemailer.js")
+// const mailer = require("./nodemailer.js")
 
 const corsFn = cors({
   origin: '*',
@@ -56,7 +56,7 @@ db.sequelize.sync(syncOptions).then(function () {
 
 
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-    mailer();
+    // mailer();
   })
 
 });
