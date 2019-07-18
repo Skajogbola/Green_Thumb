@@ -38,8 +38,8 @@ class Signin extends Component {
         password: this.state.password,
       })
         .then(res => {
-          console.log(res);
-          localStorage.setItem("userinfo", JSON.stringify(res.userInfo));
+          console.log(res.data);
+          localStorage.setItem("userinfo", JSON.stringify(res.data.userInfo));
         })
         .catch(err => console.log(err));
     }
@@ -48,7 +48,7 @@ class Signin extends Component {
   render() {
     const { navigate } = this.state
     if (navigate) {
-      return <Redirect to="/browse" push={true} />
+      return <Redirect to="/Browse" push={true} />
     }
     return (
 
@@ -91,7 +91,6 @@ class Signin extends Component {
                   onClick={(e) => {
                     this.setState({ navigate: true }); this.handleFormSubmit(e);
                   }}
-                // onClick={this.handleFormSubmit}
                 >
                   Sign In
               </FormBtn>
