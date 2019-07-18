@@ -21,6 +21,7 @@ require("dotenv").config();
         }
   };
 
+
  //This is for local branch testing only.
 //  module.exports = {
 //    "development": {
@@ -29,7 +30,6 @@ require("dotenv").config();
 //     "database":process.env.DATABASE,
 //      "host": "localhost",
 //      "dialect": "mysql"
-    
 //    },
 //     "test": {
 //      "username": "root",

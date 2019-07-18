@@ -139,7 +139,7 @@ class Browse extends Component {
                                     <strong>G R E E N    T H U M B</strong>
                                 </h1>
                                 <h2 className="text-center">Search for and Save Plants of Interest.</h2>
-                            </Jumbotron> 
+                            </Jumbotron>
 
                         </Col>
 
@@ -161,7 +161,7 @@ class Browse extends Component {
                                 <Col key={e.id} size="md-4">
                                     <Card
                                         showDetails={() => this.showDetails(e)} title={e.name}>
-                                        <img className="img-fluid" style={{ maxHeight: "300px", maxWidth: "300px" }}
+                                        <img className="img-fluids" style={{ height: "300px", width: "300px" }}
                                             src={e.picture}
                                             alt={e.name} />
                                     </Card>
