@@ -136,10 +136,10 @@ class Browse extends Component {
 
                             }} >
                                 <h1 className="text-center">
-                                    <strong>Plant Search</strong>
+                                    <strong>G R E E N    T H U M B</strong>
                                 </h1>
                                 <h2 className="text-center">Search for and Save Plants of Interest.</h2>
-                            </Jumbotron>
+                            </Jumbotron> 
 
                         </Col>
 
