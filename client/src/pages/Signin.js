@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
+import { Redirect } from "react-router-dom";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
+import signinbg2 from "../images2/signinbg2.jpg";
 
 
 class Signin extends Component {
@@ -37,8 +38,8 @@ class Signin extends Component {
         password: this.state.password,
       })
         .then(res => {
-          // console.log(res);
-          localStorage.setItem("userinfo", JSON.stringify(res.userInfo)); 
+          console.log(res);
+          localStorage.setItem("userinfo", JSON.stringify(res.userInfo));
         })
         .catch(err => console.log(err));
     }
@@ -50,51 +51,56 @@ class Signin extends Component {
       return <Redirect to="/browse" push={true} />
     }
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>Let Us Sign You Up!</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.firstname}
-                onChange={this.handleInputChange}
-                name="firstname"
-                placeholder="First Name (required)"
-              />
-              <Input
-                value={this.state.lastname}
-                onChange={this.handleInputChange}
-                name="lastname"
-                placeholder="Last Name (required)"
-              />
-              <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="Email Address (required)"
-              />
-              <Input
-                value={this.state.password}
-                onChange={this.handleInputChange}
-                name="password"
-                type="password"
-                placeholder="Password (required)"
-              />
-              <FormBtn
-              disabled={!(this.state.firstname && this.state.lastname && this.state.email && this.state.password)}
-                onClick={(e) => {
-                  this.setState({ navigate: true }); this.handleFormSubmit(e);
-                }}
-              // onClick={this.handleFormSubmit}
-              >
-                Sign In
+
+      <div style={{ position: "relative", width:"100%", height:"800px", backgroundImage: `url(${signinbg2})` }}>
+
+        <Container fluid>
+          <Row>
+            <Col size="md-12">
+              <Jumbotron>
+                <h1>Let Us Sign You Up!</h1>
+              </Jumbotron>
+              <form>
+                <Input
+                  value={this.state.firstname}
+                  onChange={this.handleInputChange}
+                  name="firstname"
+                  placeholder="First Name (required)"
+                />
+                <Input
+                  value={this.state.lastname}
+                  onChange={this.handleInputChange}
+                  name="lastname"
+                  placeholder="Last Name (required)"
+                />
+                <Input
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                  name="email"
+                  placeholder="Email Address (required)"
+                />
+                <Input
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                  name="password"
+                  type="password"
+                  placeholder="Password (required)"
+                />
+                <FormBtn
+                  disabled={!(this.state.firstname && this.state.lastname && this.state.email && this.state.password)}
+                  onClick={(e) => {
+                    this.setState({ navigate: true }); this.handleFormSubmit(e);
+                  }}
+                // onClick={this.handleFormSubmit}
+                >
+                  Sign In
               </FormBtn>
-            </form>
-          </Col>
-        </Row>
-      </Container>
+              </form>
+            </Col>
+          </Row>
+        </Container>
+
+      </div>
     );
   }
 }

@@ -161,7 +161,7 @@ class Browse extends Component {
                                 <Col key={e.id} size="md-4">
                                     <Card
                                         showDetails={() => this.showDetails(e)} title={e.name}>
-                                        <img className="img-fluids" style={{ height: "300px", width: "300px" }}
+                                        <img className="img-fluid" style={{ maxHeight: "300px", maxWidth: "300px" }}
                                             src={e.picture}
                                             alt={e.name} />
                                     </Card>
