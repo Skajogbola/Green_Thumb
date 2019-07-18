@@ -55,8 +55,7 @@ class Saved extends Component {
               <h1 className="text-center">
                 <strong>G R E E N    T H U M B</strong>
               </h1>
-              <strong>Welcome to your saved Plants</strong>
-              {/* <h2 className="text-center">Search for and Save Books of Interest.</h2> */}
+              <h2 className="text-center">Welcome to your saved Plants</h2>
             </Jumbotron>
           </Col>
         </Row>
