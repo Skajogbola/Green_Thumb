@@ -36,6 +36,25 @@
 //               pass: 'slwcvpmjaeywvztm'
 //             }
 //           });
+      
+//           var mailOptions = {
+//             from: 'azzabdin@gmail.com',
+//             to: results[0].dataValues.email,
+      
+//             subject: 'Sending Email using Node.js',
+//             text: 'Hello DID YOU WATER YOUR PLANTS TODAY?'
+//           };
+      
+//           transporter.sendMail(mailOptions, function (error, info) {
+//             if (error) {
+//               console.log(error);
+//             } else {
+//               console.log('Email sent: ' + info.response);
+//             }
+//           });
+//         })
+
+//       }
 
 //           var mailOptions = {
 //             from: 'azzabdin@gmail.com',
@@ -55,9 +74,6 @@
 //         })
 
 //       }
-
-
-
 //     });
 //   }
 
