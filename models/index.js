@@ -1,6 +1,3 @@
-// module.exports = {
-//   Book: require("./book")
-// };
 
 "use strict";
 
