@@ -1,5 +1,5 @@
 require("dotenv").config();
-// module.exports = {
+ //module.exports = {
 //     "development": {
 //       "username": process.env.HEROKUUN,
 //       "password": process.env.HEROKUPW,
@@ -25,22 +25,22 @@ require("dotenv").config();
  module.exports = {
    "development": {
     "username": "root",
-    "password": "Anita63!",
-    "database": "greenthumb_db",
+    "password": process.env.PASSWORD,
+    "database":process.env.DATABASE,
      "host": "localhost",
      "dialect": "mysql"
     
-   }
-  //  "test": {
-  //    "username": "root",
-  //    "password": null,
-  //    "database": "testdb",
-  //    "host": "localhost",
-  //    "dialect": "mysql",
-  //    "logging": false
-   //},
-//    "production": {
-//      "use_env_variable": "JAWSDB_URL",
-//      "dialect": "mysql"
-//    }
+   },
+    "test": {
+     "username": "root",
+    "password": null,
+    "database": "testdb",
+     "host": "localhost",
+    "dialect": "mysql",
+      "logging": false
+   },
+  "production": {
+     "use_env_variable": "JAWSDB_URL",
+      "dialect": "mysql"
+    }
   }

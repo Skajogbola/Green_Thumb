@@ -60,7 +60,7 @@ class Saved extends Component {
                 <strong>G R E E N    T H U M B</strong>
               </h1>
                 <strong>Welcome to your saved Plants</strong>
-              </h1>
+              
               {/* <h2 className="text-center">Search for and Save Books of Interest.</h2> */}
             </Jumbotron>
           </Col>
