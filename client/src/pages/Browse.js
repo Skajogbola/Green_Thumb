@@ -145,8 +145,8 @@ class Browse extends Component {
 
                     </Row>
                     <Col size="md-12" >
-                        <input style={{ color: "white" }}
-                            className="form-control"
+                        <input style={{ marginLeft: 900 }}
+                            className="form-control-lg"
                             type="text"
                             value={this.state.searchTerm}
                             placeholder="Search"
