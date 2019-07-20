@@ -1,6 +1,6 @@
 # Green_Thumb
 # Welcome to Green Thumb
-#Your one stop source for all things indoor plants.
+Your one stop source for all things indoor plants.
 
 We make plant care a breeze
 
@@ -22,5 +22,5 @@ Save as many plants as you like
 
 **Show off your [Green Thumb](https://dry-ocean-53441.herokuapp.com/)!**
 
-![](https://gph.is/2nTtaRE)
+![plant not dying](https://gph.is/2nTtaRE)
 
