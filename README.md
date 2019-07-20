@@ -22,5 +22,5 @@ Save as many plants as you like
 
 **Show off your [Green Thumb](https://dry-ocean-53441.herokuapp.com/)!**
 
-![plant not dying](https://gph.is/2nTtaRE)
+
 
