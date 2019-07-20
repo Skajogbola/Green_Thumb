@@ -88,12 +88,11 @@ class Signin extends Component {
                 />
                 <FormBtn
                   disabled={!(this.state.firstname && this.state.lastname && this.state.email && this.state.password)}
-                  onClick={(e) => {
-                    this.setState({ navigate: true }); this.handleFormSubmit(e);
-                  }}
+                  onClick={this.handleFormSubmit}
                 >
-                  Sign In
+                  SUBMIT
               </FormBtn>
+              <a href="/login" className="btn btn-success"> Sign In </a>
               </form>
             </Col>
           </Row>
