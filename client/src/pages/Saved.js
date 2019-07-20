@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 // import Nav from "../components/Nav";
+import { Link } from "react-router-dom";
 
 
 // import { List } from "../components/List";
@@ -55,9 +56,11 @@ class Saved extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1 className="text-center">
-                <strong>G R E E N    T H U M B</strong>
+                <strong><Link className="navbar-brand link" to="/" style={{ color: "gray" }}> <i className="fas fa-thumbs-up"></i>
+                </Link>G R E E N    T H U M B</strong>
               </h1>
               <h2 className="text-center">Welcome to your saved plants {this.state.userName}</h2>
+
             </Jumbotron>
           </Col>
         </Row>

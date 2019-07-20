@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 
+
 function Modal({ name, picture, sunlight, water, fertilizer, careSummary, savePlant, cancelModal }) {
     return (
         <div className="modal-dialogAA modal-dialog-centeredAA" style={{
@@ -29,13 +30,14 @@ function Modal({ name, picture, sunlight, water, fertilizer, careSummary, savePl
                 <img className="img-fluid" height="150px" width="150px"
                     src={picture}
                     alt={name} />
-                <p>Sunlight: {sunlight}</p>
-                <p>Water: {water}</p>
-                <p>Fertilizer: {fertilizer}</p>
-                <p>Care Summary: {careSummary}</p>
+                <br></br>
+                <p className="fas fa-sun" style={{ fontWeight: "bold" }}>   SUNLIGHT: {sunlight}</p><br></br>
+                <p className="fas fa-tint" style={{ fontWeight: "bold" }} >   WATER: {water}</p><br></br>
+                <p className="fas fa-seedling" style={{ fontWeight: "bold" }}>   FERTILIZER: {fertilizer}</p><br></br>
+                <p className="fas fa-cookie-bite" style={{ fontWeight: "bold" }}>   CARE SUMMARY: {careSummary}</p><br></br>
 
-                <div style={{ marginRight: 20 }} onClick={() => savePlant()} className="btn btn-primary">Save</div>
-                <div onClick={() => cancelModal()} className="btn btn-danger">Cancel</div>
+                <div style={{ marginRight: 20 }} onClick={() => savePlant()} className="btn btn-primary"><i class="far fa-bookmark"></i>  Save </div>
+                <div onClick={() => cancelModal()} className="btn btn-danger"><i class="far fa-window-close"></i>  Cancel</div>
 
 
             </div>
