@@ -1,6 +1,6 @@
 # Green_Thumb
 # Welcome to Green Thumb
-##Your one stop source for all things indoor plants.
+#Your one stop source for all things indoor plants.
 
 We make plant care a breeze
 
