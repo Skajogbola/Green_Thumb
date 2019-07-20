@@ -8,23 +8,23 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         sunlight: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(500),
             allowNull: false,
         },
         water: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(500),
             allowNull: false,
         },
         picture: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(500),
             allowNull: false,
         },
         fertilizer: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(500),
             allowNull: false,
         },
         careSummary: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(2000),
             allowNull: true,
         },
     },{
