@@ -39,8 +39,8 @@ class Nav extends Component {
       <div className="sticky-top">
         <nav className="navbar navbar-expand-lg navbar-light bg-transparent mb-2">
 
-          <Link className="navbar-brand link" to="/" style={{ color: "white" }}>
-            HOME
+          <Link className="navbar-brand link" to="/" style={{ color: "white" }}> <i className="fas fa-thumbs-up"></i>
+            <span>   </span>HOME
         </Link>
 
           <button
